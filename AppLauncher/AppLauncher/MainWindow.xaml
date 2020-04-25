@@ -1,0 +1,18 @@
+﻿<Window x:Class="AppLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppLauncher"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        ResizeMode="CanMinimize">
+    <Grid  Background="#343838">
+
+        <ListBox Name="AppList" Background="Gray" HorizontalAlignment="Left" Height="161" VerticalAlignment="Top" Width="698" Margin="45,64,45,0"/>
+        <Button Name="Add" FontSize="14" Background="#37b39e" Content="Add Application" Margin="200,242,456.6,135" Click="Add_Click"/>
+        <Button Name="Remove" FontSize="14" Background="#37b39e" Content="Remove Application" Margin="456,242,200,135" Click="Remove_Click"/>
+        <Button Name="Launch" FontSize="14" Background="#37b39e" Content="Launch" Margin="327,313,328.6,64"/>
+
+    </Grid>
+</Window>

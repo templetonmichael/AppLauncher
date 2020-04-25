@@ -1,0 +1,14 @@
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\AppLauncher.csprojAssemblyReference.cache
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\MainWindow.g.cs
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\App.g.cs
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\AppLauncher_MarkupCompile.cache
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\AppLauncher_MarkupCompile.lref
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\bin\Debug\AppLauncher.exe.config
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\bin\Debug\AppLauncher.exe
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\bin\Debug\AppLauncher.pdb
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\MainWindow.baml
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\AppLauncher.g.resources
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\AppLauncher.Properties.Resources.resources
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\AppLauncher.csproj.GenerateResource.cache
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\AppLauncher.exe
+C:\Users\templ\source\repos\AppLauncher\AppLauncher\obj\Debug\AppLauncher.pdb
