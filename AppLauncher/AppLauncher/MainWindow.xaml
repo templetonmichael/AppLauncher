@@ -12,7 +12,7 @@
         <ListBox Name="AppList" Background="Gray" HorizontalAlignment="Left" Height="161" VerticalAlignment="Top" Width="698" Margin="45,64,45,0"/>
         <Button Name="Add" FontSize="14" Background="#37b39e" Content="Add Application" Margin="200,242,456.6,135" Click="Add_Click"/>
         <Button Name="Remove" FontSize="14" Background="#37b39e" Content="Remove Application" Margin="456,242,200,135" Click="Remove_Click"/>
-        <Button Name="Launch" FontSize="14" Background="#37b39e" Content="Launch" Margin="327,313,328.6,64"/>
+        <Button Name="Launch" FontSize="14" Background="#37b39e" Content="Launch" Margin="327,313,328.6,64" Click="Launch_Click"/>
 
     </Grid>
 </Window>

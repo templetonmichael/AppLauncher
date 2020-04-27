@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace AppLauncher
 {
@@ -24,6 +27,16 @@ namespace AppLauncher
         public MainWindow()
         {
             InitializeComponent();
+            try
+            {
+                var jsonText = File.ReadAllText(GetJsonFilePath());
+                Applications = JsonConvert.DeserializeObject<List<UserApplication>>(jsonText);
+                refreshList();
+            }
+            catch
+            {
+
+            }
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -39,28 +52,64 @@ namespace AppLauncher
                 string filePath = explorer.FileName;
                 var newApp = new UserApplication(filePath);
                 Applications.Add(newApp);
-
-                var newListItem = new ListBoxItem();
-                newListItem.Content = newApp.Display();
-                AppList.Items.Add(newListItem);
+                updateJsonFile();
+                refreshList();
             }
 
+        }
+
+        private void updateJsonFile()
+        {
+            try
+            {
+                var appJson = JsonConvert.SerializeObject(Applications);
+                string jsonPath = GetJsonFilePath();
+                File.WriteAllText(jsonPath, appJson);
+            }
+            catch
+            {
+                Console.WriteLine("The application has failed for an unkown reason, please restart.");
+            }
+
+        }
+
+        private void refreshList()
+        {
+            AppList.Items.Clear();
+            foreach (var application in Applications)
+            {
+                var listItem = new ListBoxItem();
+                listItem.Content = application.Display();
+                AppList.Items.Add(listItem);
+            }
+        }
+        private static string GetJsonFilePath()
+        {
+            return System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Applications.json");
         }
 
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                var selected = AppList.Items.IndexOf(AppList.SelectedItem);
-                AppList.Items.RemoveAt(selected);
-
-                var result = AppList.SelectedItems.First.Substring(str.LastIndexOf('\t') + 1);
-
+                var selected = AppList.SelectedItem as ListBoxItem;
+                Applications.RemoveAll(app => app.Display() == selected.Content.ToString());
+                updateJsonFile();
+                refreshList();
             }
             catch
             {
                 return;
             }
+        }
+
+        private void Launch_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var app in Applications)
+            {
+                app.Process.Start();
+            }
+
         }
     }
 }
